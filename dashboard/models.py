@@ -33,4 +33,30 @@ class Review(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.name} - {self.rating}/5"
+        return f"{self.name} - {self.rating}"
+    
+    
+
+class InvitationDesign(models.Model):
+    CATEGORY_CHOICES = [
+        ('classic', 'Classic'),
+        ('modern', 'Modern'),
+        ('minimalist', 'Minimalist'),
+        ('themed', 'Themed'),
+    ]
+
+    # Fields for the invitation design
+    title = models.CharField(max_length=200,null=True, blank=True)
+    image_url = models.URLField()  # Store the URL of the image
+    description = models.TextField(blank=True, null=True)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['created_at']
+
