@@ -1,0 +1,391 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnlineConnect | Beautiful Digital Wedding Invitations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <script src="{% static 'js/dashboard.js' %}" defer></script>
+</head>
+
+<body>
+
+  {% include 'partials/header.html' %}
+
+
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Create Stunning Digital Special Invitations</h1>
+        <p class="lead">Beautiful, customizable online invitations that impress your guests and simplify your planning
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#contact" class="btn btn-primary btn-lg">Start Designing</a>
+          {% comment %} <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <a href="#features" class="position-absolute bottom-0 start-50 translate-middle-x mb-4"
+      style="color: white; font-size: 2rem;">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <div class="stats-number">5,000+</div>
+            <div class="stats-label">Happy Couples</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <div class="stats-number">150+</div>
+            <div class="stats-label">Design Templates</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <div class="stats-number">98%</div>
+            <div class="stats-label">Customer Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <div class="stats-number">24/7</div>
+            <div class="stats-label">Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class=" section-title text-center features-title">Why Choose WedConnect?</h2>
+      <p class="text-center lead mb-5">Modern solutions for your perfect special invitations</p>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+          <img src="https://about.easil.com/wp-content/uploads/Animated_GIF-10-ways.gif" alt="Beautiful Invitation Design"
+            class="img-fluid feature-img">
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h3>Stunning Design Templates</h3>
+          <p>Choose from our collection of professionally designed templates that cater to every invitation style - from
+            classic elegance to modern minimalism. Each template is fully customizable to match your invitation theme and
+            colors.</p>
+<ul class="list-unstyled">
+  <li class="mb-2">
+    <i class="fas fa-check-circle text-primary me-2"></i> 150+ designer-curated templates
+  </li>
+  <li class="mb-2">
+    <i class="fas fa-check-circle text-primary me-2"></i> Services Provided
+    <ol class="ms-3">
+      <li class="fw-bold text-success">Birthdays</li>
+      <li class="fw-bold text-success">Engagements</li>
+      <li class="fw-bold text-success">Marriages</li>
+      <li class="fw-bold text-success">Special Invitations</li>
+      <li class="fw-bold text-success">Lots More</li>
+    </ol>
+  </li>
+  <li class="mb-2">
+    <i class="fas fa-check-circle text-primary me-2"></i> Complete color customization
+  </li>
+  <li class="mb-2">
+    <i class="fas fa-check-circle text-primary me-2"></i> Add your own photos and text
+  </li>
+  <li class="mb-2">
+    <i class="fas fa-check-circle text-primary me-2"></i> Preview before sending
+  </li>
+</ul>
+
+
+        </div>
+      </div>
+
+      <div class="row align-items-center mb-5 flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://www.webyug.in/images/solutions/QR-code-management-animate.svg" alt="QR Code Invitation"
+            class="img-fluid feature-img">
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h3>Smart QR Code Integration</h3>
+          <p>Each digital invitation comes with a unique QR code that your guests can scan to RSVP, get directions to
+            your venue, view your registry, and more - all from their smartphone.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Instant RSVP tracking</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Integrated maps and directions</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Link to gift registry</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Wedding website integration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img src="https://cdn.prod.website-files.com/62c2a83de7fe5c17eb65b6f7/62d43db75d3ddbb19a9228be_62c02ed478902379df1bb4df_Technology-to-improve-hotel-customer-service.gif" alt="Guest Management Dashboard"
+            class="img-fluid feature-img">
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h3>Comprehensive Guest Management</h3>
+          <p>Our dashboard gives you complete control over your guest list, RSVPs, meal preferences, and more - all in
+            one convenient place.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Real-time RSVP tracking</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Automated reminders</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Guest messaging system</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Exportable guest data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Gallery Section -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center section-title">Invitation Gallery</h2>
+    <p class="text-center lead mb-5">Browse our most popular invitation designs</p>
+
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgQinE52CEt--ye9QMNXKn4IHKPQs6EqXPeedLuyqxAHWkwinYYo0SFKiZCegwryMBb8&usqp=CAU" class="d-block w-50" alt="Elegant Invitation">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Elegant Invitation</h5>
+            <p>Timeless elegance for your special day.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgQinE52CEt--ye9QMNXKn4IHKPQs6EqXPeedLuyqxAHWkwinYYo0SFKiZCegwryMBb8&usqp=CAU" class="d-block w-50" alt="Modern Invitation">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Modern Invitation</h5>
+            <p>Clean lines and bold style to make a statement.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgQinE52CEt--ye9QMNXKn4IHKPQs6EqXPeedLuyqxAHWkwinYYo0SFKiZCegwryMBb8&usqp=CAU" class="d-block w-50" alt="Floral Invitation">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Floral Invitation</h5>
+            <p>Delicate blooms for a romantic touch.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Button -->
+    <div class="text-center mt-5">
+      <a href="/designs" class="btn btn-primary btn-lg">View All Designs</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">Reviews</h2>
+      <p class="text-center lead mb-5">Don't just take our word for it</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card h-100">
+            <div class="testimonial-text">
+              "WedConnect transformed our wedding planning. The digital invitations were so elegant and the RSVP
+              tracking saved us countless hours of follow-up calls. Our guests couldn't stop complimenting how modern
+              and convenient it was!"
+            </div>
+            <div class="client-name">— Priya & Rahul, Mumbai</div>
+            <div class="rating mt-2 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card h-100">
+            <div class="testimonial-text">
+              "As a destination wedding, we needed something that could handle international guests easily. WedConnect's
+              multilingual support and automatic timezone adjustments were lifesavers! The beautiful designs were just
+              the cherry on top."
+            </div>
+            <div class="client-name">— Aisha & Vikram, Dubai</div>
+            <div class="rating mt-2 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card h-100">
+            <div class="testimonial-text">
+              "We were skeptical about digital invitations at first, but WedConnect changed our minds completely. The
+              customization options let us create something truly unique that reflected our personality. The guest
+              management tools made the whole process so smooth!"
+            </div>
+            <div class="client-name">— Neha & Arjun, Bangalore</div>
+            <div class="rating mt-2 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/reviews" class="btn btn-primary btn-lg">Make a Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center section-title">Ready to Get Started?</h2>
+      <p class="text-center lead mb-5">Let's create something beautiful together</p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="contact-card h-100">
+            <div class="contact-info">
+              <h3 class="mb-4">Contact Information</h3>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="contact-icon fas fa-envelope"></i>
+                <div>
+                  <h5>Email Us</h5>
+                  <a href="mailto:bhanu21reddy@gmail.com" class="text-decoration-none">bhanu21reddy@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="contact-icon fas fa-phone-alt"></i>
+                <div>
+                  <h5>Call Us</h5>
+                  <a href="tel:+916305843714" class="text-decoration-none">+91 6305843714</a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="contact-icon fas fa-map-marker-alt"></i>
+                <div>
+                  <h5>Our Service</h5>
+                  <p>We Provide Our services through online </p>
+                </div>
+              </div>
+
+              {% comment %} <div class="mt-5">
+                <h5>Follow Us</h5>
+                <div class="d-flex mt-3">
+                  <a href="#" class="social-icon primary"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+
+              </div> {% endcomment %}
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="contact-card h-100">
+            <div class="p-4">
+              <h3 class="mb-4">Send Us a Message</h3>
+              <form id="contactForm" method="post" class="contactForm">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name" class="form-label">Your Name</label>
+    <input type="text" class="form-control" id="username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
+  </div>
+  <div class="mb-3">
+    <label for="weddingDate" class="form-label">Wedding Date</label>
+    <input type="date" class="form-control" id="weddingDate" name="weddingDate">
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Your Message</label>
+    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary w-100 submitBtn">Send Message</button>
+
+  {% if success %}
+  <div class="alert alert-success mt-3">Thank you! We'll get in touch soon.....</div>
+  {% endif %}
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container text-center">
+      {% comment %} <p class="mb-0">© 2023 WedConnect. All rights reserved.</p>
+      <div class="footer-links mt-3">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="#">Contact Us</a>
+      </div> {% endcomment %}
+    </div>
+  </footer>
+  <a href="#top" class="floating-btn">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>
