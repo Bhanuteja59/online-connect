@@ -53,12 +53,6 @@ class InvitationDesign(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def get_image(self):
-        # Return uploaded image if exists, otherwise fallback to URL
-        if self.image_file:
-            return self.image_file.url
-        return self.image_url
-
     def __str__(self):
         return self.title or "Untitled Design"
 
