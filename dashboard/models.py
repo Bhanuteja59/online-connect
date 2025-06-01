@@ -45,7 +45,7 @@ class InvitationDesign(models.Model):
     ]
 
     title = models.CharField(max_length=200, null=True, blank=True)
-    image_file = models.ImageField(upload_to='invitations/', null=True, blank=True)  # uploaded image
+    image_file = models.ImageField(upload_to='invitations/')  # uploaded image
     image_url = models.URLField(blank=True, null=True)  # external image link
     description = models.TextField(blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
