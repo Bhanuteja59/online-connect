@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #e83e8c;
-  --secondary-color: #6c757d;
-  --accent-color: #ffc107;
-  --light-bg: #fff9fb;
-  --dark-text: #343a40;
+  --primary-color: #e83e8c !important;
+  --secondary-color: #6c757d !important;
+  --accent-color: #ffc107 !important;
+  --light-bg: #fff9fb !important;
+  --dark-text: #343a40 !important;
 }
 
 body {
@@ -19,7 +19,7 @@ h3,
 h4,
 h5 {
   font-family: 'Playfair Display', serif;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .hero {

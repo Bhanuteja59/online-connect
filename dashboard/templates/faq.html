@@ -1,102 +1,142 @@
 {% load static %}
 
-<!DOCTYPE >
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-        {% comment %} <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
-        <script src="{% static 'js/pricing.js' %}" defer></script> {% endcomment %}
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Online Connect</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    {% comment %} <link rel="stylesheet" href="{% static 'css/pricing.css' %}"> {% endcomment %}
+    <script src="{% static 'js/pricing.js' %}" defer></script>
+
+    <style>
+        .accordion-button {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .accordion-body {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 2em;
+        }
+
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
 
 {% include 'partials/header.html' %}
 
-        <!-- FAQ Section -->
-  <section class="py-5">
+<!-- FAQ Section -->
+<section class="py-5" data-aos="fade-up" data-aos-duration="1200">
     <div class="container">
-      <h2 class="text-center section-title">Frequently Asked Questions</h2>
+        <h2 class="text-center section-title" data-aos="fade-up" data-aos-delay="200">Frequently Asked Questions</h2>
+        <br />
 
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item border-0 shadow-sm mb-3">
-          <h3 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              How do digital wedding invitations work?
-            </button>
-          </h3>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Our digital invitations are beautifully designed web pages that you customize with your wedding details.
-              You simply share the link via email, WhatsApp, or text message. Guests can view the invitation on any
-              device, RSVP with a click, and even add the event to their calendar automatically.
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item border-0 shadow-sm mb-3" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        How do digital wedding invitations work?
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our digital invitations are beautifully designed web pages that you customize with your wedding details.
+                        You simply share the link via email, WhatsApp, or text message. Guests can view the invitation on any
+                        device, RSVP with a click, and even add the event to their calendar automatically.
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="accordion-item border-0 shadow-sm mb-3">
-          <h3 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo">
-              Can older relatives who aren't tech-savvy use these?
-            </button>
-          </h3>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Absolutely! We've designed our system to be extremely simple. For guests without smartphones, you can
-              print the QR code on a postcard or our team can help you mail traditional invitations with a simple phone
-              number RSVP option that integrates with your dashboard.
+            <!-- FAQ 2 -->
+            <div class="accordion-item border-0 shadow-sm mb-3" data-aos="fade-up" data-aos-delay="500">
+                <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Can older relatives who aren't tech-savvy use these?
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! We've designed our system to be extremely simple. For guests without smartphones, you can
+                        print the QR code on a postcard or our team can help you mail traditional invitations with a simple phone
+                        number RSVP option that integrates with your dashboard.
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="accordion-item border-0 shadow-sm mb-3">
-          <h3 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree">
-              How customizable are the designs?
-            </button>
-          </h3>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Our designs are completely customizable. You can change colors, fonts, layouts, and add your own photos.
-              For Platinum members, we even offer custom design services where our designers will create a completely
-              unique invitation based on your wedding theme.
+            <!-- FAQ 3 -->
+            <div class="accordion-item border-0 shadow-sm mb-3" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        How customizable are the designs?
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our designs are completely customizable. You can change colors, fonts, layouts, and add your own photos.
+                        For Platinum members, we even offer custom design services where our designers will create a completely
+                        unique invitation based on your wedding theme.
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="accordion-item border-0 shadow-sm mb-3">
-          <h3 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseFour">
-              What if I need help setting things up?
-            </button>
-          </h3>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-            data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              We offer 24/7 customer support via chat, email, and phone. Our team will guide you through the entire
-              process, from selecting your design to sending out invitations and tracking RSVPs. We also have detailed
-              video tutorials and step-by-step guides.
+            <!-- FAQ 4 -->
+            <div class="accordion-item border-0 shadow-sm mb-3" data-aos="fade-up" data-aos-delay="900">
+                <h3 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        What if I need help setting things up?
+                    </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We offer 24/7 customer support via chat, email, and phone. Our team will guide you through the entire
+                        process, from selecting your design to sending out invitations and tracking RSVPs. We also have detailed
+                        video tutorials and step-by-step guides.
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-        
-    </body>
-    <footer class="bg-dark text-white text-center py-3">
-  <div class="container">
-      {% include 'partials/footer.html' %}
-  </div>
+</section>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+    AOS.init({
+        duration: 1200, // Animation duration
+        easing: 'ease-in-out', // Animation easing
+        once: true, // Animation happens only once when scrolled into view
+    });
+</script>
+
+</body>
+
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        {% include 'partials/footer.html' %}
+    </div>
 </footer>
+
 </html>

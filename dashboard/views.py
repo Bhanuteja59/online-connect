@@ -25,8 +25,8 @@ def dashboard(request):
         )
         contact.save()
         return render(request, "dashboard.html", {"success": True})
-    
-    return render(request, "dashboard.html")
+    services = Service.objects.all()
+    return render(request, "dashboard.html", {"services": services})
 
 
 
@@ -64,17 +64,10 @@ def services(request):
 
 
 
-
 def designs(request):
-    # Fetch all invitation designs from the database
     designs = InvitationDesign.objects.all()
-
-    # Group designs by category (optional for tab filtering)
     categories = InvitationDesign.CATEGORY_CHOICES
-
     return render(request, "designs.html", {'designs': designs, 'categories': categories})
-
-
 
 
 

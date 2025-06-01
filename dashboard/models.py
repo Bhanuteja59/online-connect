@@ -41,22 +41,26 @@ class InvitationDesign(models.Model):
     CATEGORY_CHOICES = [
         ('classic', 'Classic'),
         ('modern', 'Modern'),
-        ('minimalist', 'Minimalist'),
         ('themed', 'Themed'),
     ]
 
-    # Fields for the invitation design
-    title = models.CharField(max_length=200,null=True, blank=True)
-    image_url = models.URLField()  # Store the URL of the image
+    title = models.CharField(max_length=200, null=True, blank=True)
+    image_file = models.ImageField(upload_to='invitations/', null=True, blank=True)  # uploaded image
+    image_url = models.URLField(blank=True, null=True)  # external image link
     description = models.TextField(blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def get_image(self):
+        # Return uploaded image if exists, otherwise fallback to URL
+        if self.image_file:
+            return self.image_file.url
+        return self.image_url
+
     def __str__(self):
-        return self.title
+        return self.title or "Untitled Design"
 
     class Meta:
         ordering = ['created_at']
-

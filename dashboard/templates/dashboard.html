@@ -8,7 +8,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OnlineConnect | Beautiful Digital Wedding Invitations</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +31,7 @@
         <p class="lead">Beautiful, customizable online invitations that impress your guests and simplify your planning
         </p>
         <div class="d-flex justify-content-center gap-3">
-          <a href="#contact" class="btn btn-primary btn-lg">Start Designing</a>
+          <a href="#stats" class="btn btn-primary btn-lg">Start Designing</a>
           {% comment %} <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a> {% endcomment %}
         </div>
       </div>
@@ -44,7 +43,7 @@
   </header>
 
   <!-- Stats Section -->
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-white stats" id="stats">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-3 col-6">
@@ -159,48 +158,27 @@
   </section>
 
 
-<!-- Gallery Section -->
-<section id="gallery" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center section-title">Invitation Gallery</h2>
-    <p class="text-center lead mb-5">Browse our most popular invitation designs</p>
-
-    <!-- Dynamic Gallery -->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="iframe-container text-center">
-            <iframe src="https://codepen.io/Bhanu-Teja-/full/dPoYLjO" 
-                    class="gallery-iframe" 
-                    title=""
-                    width="100%" 
-                    height="400" 
-                    loading="lazy">
-            </iframe>
-          </div>
+<!-- Our Services -->
+<section class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold section-title">Our Services Include ....</h2>
+    <p class="text-muted">A complete digital invitation solution for every occasion</p>
+  </div>
+  <div class="row text-center g-4">
+    <!-- Loopable cards (same as your original but with enhancements) -->
+    {% for service in services %}
+    <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <img src="{{ service.image }}" alt="{{ service.title }}" class="mb-3" style="height: 100px;" />
+          <h5 class="card-title">{{ service.title }}</h5>
+          <p class="card-text">{{ service.description }}</p>
         </div>
+      </div>
     </div>
-
-    <!-- Button -->
-    <div class="text-center mt-5">
-      <a href="/designs" class="btn btn-primary btn-lg">View All Designs</a>
-    </div>
+    {% endfor %}
   </div>
 </section>
-
-<!-- Styles -->
-<style>
-  .gallery-iframe {
-    cursor: none;  /* This will remove the cursor when hovering over the iframe */
-    border-radius: 8px; /* Optional: Adds rounded corners for better aesthetics */
-  }
-
-  /* Ensures responsiveness on smaller screens */
-  @media (max-width: 768px) {
-    .gallery-iframe {
-      height: 300px; /* Adjust height for smaller screens */
-    }
-  }
-</style>
 
 
 
@@ -215,9 +193,7 @@
         <div class="col-md-4">
           <div class="testimonial-card h-100">
             <div class="testimonial-text">
-              "Online Connect transformed our wedding planning. The digital invitations were so elegant and the RSVP
-              tracking saved us countless hours of follow-up calls. Our guests couldn't stop complimenting how modern
-              and convenient it was!"
+              "WedConnect transformed our wedding planning."
             </div>
             <div class="client-name">— Priya & Rahul, Mumbai</div>
             <div class="rating mt-2 text-warning">
@@ -233,9 +209,7 @@
         <div class="col-md-4">
           <div class="testimonial-card h-100">
             <div class="testimonial-text">
-              "As a destination wedding, we needed something that could handle international guests easily. WedConnect's
-              multilingual support and automatic timezone adjustments were lifesavers! The beautiful designs were just
-              the cherry on top."
+              "As a destination wedding, we needed something that could handle international guests easily. Online Connect did just that."
             </div>
             <div class="client-name">— Aisha & Vikram, Dubai</div>
             <div class="rating mt-2 text-warning">
@@ -251,9 +225,7 @@
         <div class="col-md-4">
           <div class="testimonial-card h-100">
             <div class="testimonial-text">
-              "We were skeptical about digital invitations at first, but Online Connect changed our minds completely. The
-              customization options let us create something truly unique that reflected our personality. The guest
-              management tools made the whole process so smooth!"
+              "We were skeptical about digital invitations at first, but Online Connect changed our minds completely. "
             </div>
             <div class="client-name">— Neha & Arjun, Bangalore</div>
             <div class="rating mt-2 text-warning">
@@ -274,126 +246,115 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-white">
-    <div class="container">
-      <h2 class="text-center section-title">Ready to Get Started?</h2>
-      <p class="text-center lead mb-5">Let's create something beautiful together</p>
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center text-primary mb-4 fw-bold section-title">We'd Love to Hear From You!</h2>
+    <p class="text-center lead mb-5 ">Got a question or need assistance? We’re just a message away. Let's make magic together!</p>
 
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="contact-card h-100">
-            <div class="contact-info">
-              <h3 class="mb-4">Contact Information</h3>
-
-              <div class="d-flex align-items-start mb-4">
-                <i class="contact-icon fas fa-envelope"></i>
-                <div>
-                  <h5>Email Us</h5>
-                  <a href="mailto:bhanu21reddy@gmail.com" class="text-decoration-none">bhanu21reddy@gmail.com</a>
-                </div>
+    <div class="row g-4">
+      <!-- Contact Info -->
+      <div class="col-lg-6">
+        <div class="card shadow-sm p-4 border-0">
+          <div class="contact-info">
+            <h3 class="mb-4 fw-bold text-success">Get in Touch</h3>
+            <div class="d-flex align-items-start mb-4 gap-3">
+              <i class="contact-icon fas fa-envelope fa-2x text-primary"></i>
+              <div>
+                <h5 class="fw-semibold">Email Us</h5>
+                <a href="mailto:bhanu21reddy@gmail.com" class="text-decoration-none">bhanu21reddy@gmail.com</a>
               </div>
-
-              <div class="d-flex align-items-start mb-4">
-                <i class="contact-icon fas fa-phone-alt"></i>
-                <div>
-                  <h5>Call Us</h5>
-                  <a href="tel:+916305843714" class="text-decoration-none">+91 6305843714</a>
-                </div>
+            </div>
+            <div class="d-flex align-items-start mb-4 gap-3">
+              <i class="contact-icon fas fa-phone-alt fa-2x text-primary"></i>
+              <div>
+                <h5 class="fw-semibold">Call Us</h5>
+                <a href="tel:+916305843714" class="text-decoration-none">+91 6305843714</a>
               </div>
-
-              <div class="d-flex align-items-start mb-4">
-                <i class="contact-icon fas fa-map-marker-alt"></i>
-                <div>
-                  <h5>Our Service</h5>
-                  <p>We Provide Our services through online </p>
-                </div>
+            </div>
+            <div class="d-flex align-items-start mb-4 gap-3">
+              <i class="contact-icon fas fa-globe fa-2x text-primary"></i>
+              <div>
+                <h5 class="fw-semibold">Our Service</h5>
+                <p>We provide online services to meet your needs. Let’s connect and create something beautiful!</p>
               </div>
-
-              {% comment %} <div class="mt-5">
-                <h5>Follow Us</h5>
-                <div class="d-flex mt-3">
-                  <a href="#" class="social-icon primary"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                </div>
-
-              </div> {% endcomment %}
-
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-lg-6">
-  <div class="contact-card h-100">
-    <div class="p-4">
-      <h3 class="mb-4">Send Us a Message</h3>
-      <form id="contactForm" method="post" class="contactForm">
-        {% csrf_token %}
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+      <!-- Contact Form -->
+      <div class="col-lg-6">
+        <div class="card shadow-sm p-4 border-0">
+          <h3 class="mb-4 fw-bold text-success">Send a Message About Your Event</h3>
+          <form id="contactForm" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="username" class="form-label fw-semibold">Your Name</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required />
+            </div>
+            <div class="mb-3">
+              <label for="phonenumber" class="form-label fw-semibold">Phone Number</label>
+              <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter Your Phone Number" />
+            </div>
+            <div class="mb-3">
+              <label for="weddingDate" class="form-label fw-semibold">Event Date</label>
+              <input type="date" class="form-control" id="weddingDate" name="weddingDate" />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold">Your Message</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your event or inquiry..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Send Message</button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
-        </div>
-        <div class="mb-3">
-          <label for="weddingDate" class="form-label">Wedding Date</label>
-          <input type="date" class="form-control" id="weddingDate" name="weddingDate">
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Your Message</label>
-          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary w-100 submitBtn">Send Message</button>
-        
-        {% if success %}
-        <!-- Show Success Alert -->
-        <div class="alert alert-success mt-3">
-          Thank you! We'll get in touch soon.....
-        </div>
-        {% endif %}
-      </form>
+      </div>
     </div>
   </div>
-</div>
-
+</section>
 <!-- Toast Notification -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      <strong class="me-auto">Success</strong>
-      <small>Just Now</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  <div id="liveToast" class="toast align-items-center text-bg-light border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" style="min-width: 300px;">
+    <div class="toast-header bg-success text-white">
+      <i class="fas fa-check-circle me-2 fa-lg"></i>
+      <strong class="me-auto">Message Sent</strong>
+      <span class="badge bg-light text-success rounded-pill ms-2">Success</span>
+      <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
-      Your message has been sent successfully!
+    <div class="toast-body d-flex align-items-center gap-3">
+      <div class="text-success fs-4">
+        <i class="fas fa-paper-plane"></i>
+      </div>
+      <div>
+        <p class="mb-1 fw-semibold">Thanks for reaching out!</p>
+        <small class="text-muted">We'll get back to you shortly.</small>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Bootstrap JS + Font Awesome -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-  // Show the toast if success is passed from the view
-  {% if success %}
-    var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission for now
+    const toastLive = document.getElementById('liveToast');
+    const toast = new bootstrap.Toast(toastLive);
     toast.show();
-  {% endif %}
+    this.reset(); // Optionally reset form
+  });
 </script>
 
 
+<style>
+  .toast-header {
+    background: linear-gradient(90deg, #198754, #28a745);
+  }
+</style>
 
-      </div>
-    </div>
-  </section>
+
+
 
   <!-- Footer -->
   <footer class="py-5">
@@ -408,5 +369,4 @@
   </a>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>

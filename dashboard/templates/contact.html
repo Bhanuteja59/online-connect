@@ -2,128 +2,274 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Online Invitations</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-  <script src="{% static 'js/contact.js' %}" defer></script>
+  {% comment %} <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+
+  <script src="{% static 'js/contact.js' %}" defer></script> {% endcomment %}
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg,rgb(255, 148, 121),rgb(224, 183, 152)); /* Vibrant gradient background */
+      color: #333;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .lead {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .contact-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Bold labels */
+    .contact-form label {
+      font-weight: 700;
+      color:rgb(0, 0, 0);
+    }
+
+    /* Contact Info Styling */
+    .contact-info {
+      font-size: 1.1rem;
+    }
+
+    .contact-info h5 {
+      font-weight: 600;
+      color:rgb(0, 0, 0);
+    }
+
+    .contact-info a {
+      color:rgb(0, 21, 255);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #feb47b;
+    }
+
+    .contact-info .contact-icon {
+      font-size: 2.2rem;
+      color: #ff7e5f;
+    }
+
+    /* Input & Button Styling */
+    .contact-form input,
+    .contact-form textarea {
+      border-radius: 10px;
+      border: 1px solid #ff7e5f;
+      padding: 1rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #feb47b;
+      outline: none;
+    }
+
+    .contact-form button {
+      background-color: #ff7e5f;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #feb47b;
+      transform: scale(1.05);
+    }
+
+    /* Success Toast */
+    .toast-container {
+      position: fixed !important;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .contact-card {
+        padding: 1.5rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.8rem;
+      }
+
+      .contact-form button {
+        padding: 0.8rem 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-{% include 'partials/header.html' %}
+  {% include 'partials/header.html' %}
 
-<!-- Contact Section -->
-<section id="contact" class="py-5">
-  <div class="container">
-    <h2 class="text-center section-title mb-3">Ready to Get Started?</h2>
-    <p class="text-center lead mb-5">Let's create something beautiful together</p>
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title mb-4">We'd Love to Hear From You!</h2>
+      <p class="text-center fw-bold lead mb-5">Got a question or need assistance? We’re just a message away. Let's make magic together!</p>
 
-    <div class="row g-4">
-      <!-- Contact Info -->
-      <div class="col-lg-6">
-        <div class="contact-card h-100">
-          <div class="contact-info">
-            <h3 class="mb-4">Contact Information</h3>
-            <div class="d-flex align-items-start mb-4">
-              <i class="contact-icon fas fa-envelope"></i>
-              <div>
-                <h5>Email Us</h5>
-                <a href="mailto:bhanu21reddy@gmail.com" class="text-decoration-none">bhanu21reddy@gmail.com</a>
+      <div class="row g-4">
+        <!-- Contact Info -->
+        <div class="col-lg-6">
+          <div class="contact-card ">
+            <div class="contact-info">
+              <h3 class="mb-4">Get in Touch</h3>
+              <div class="d-flex align-items-start mb-4 gap-4">
+                <i class="contact-icon fas fa-envelope"></i>
+                <div>
+                  <h5>Email Us</h5>
+                  <a href="mailto:bhanu21reddy@gmail.com">bhanu21reddy@gmail.com</a>
+                </div>
               </div>
-            </div>
-            <div class="d-flex align-items-start mb-4">
-              <i class="contact-icon fas fa-phone-alt"></i>
-              <div>
-                <h5>Call Us</h5>
-                <a href="tel:+916305843714" class="text-decoration-none">+91 6305843714</a>
+              <div class="d-flex align-items-start mb-4 gap-4">
+                <i class="contact-icon fas fa-phone-alt"></i>
+                <div>
+                  <h5>Call Us</h5>
+                  <a href="tel:+916305843714">+91 6305843714</a>
+                </div>
               </div>
-            </div>
-            <div class="d-flex align-items-start mb-4">
-              <i class="contact-icon fas fa-globe"></i>
-              <div>
-                <h5>Our Service</h5>
-                <p>We provide our services completely online to suit your convenience.</p>
-              </div>
-            </div>
-            <div class="mt-5">
-              <h5>Follow Us</h5>
-              <div class="d-flex mt-3">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <div class="d-flex align-items-start mb-4 gap-4">
+                <i class="contact-icon fas fa-globe"></i>
+                <div>
+                  <h5>Our Service</h5>
+                  <p class="text-primary">We provide online services to meet your needs. Let’s connect and create something beautiful!</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Contact Form -->
-      <div class="col-lg-6">
-        <div class="contact-card h-100">
-          <form id="contactForm" method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="username" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="username" name="username" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="phonenumber" class="form-label">Phone Number</label>
-              <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
-            </div>
-            <div class="mb-3">
-              <label for="weddingDate" class="form-label">Event Date</label>
-              <input type="date" class="form-control" id="weddingDate" name="weddingDate">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-theme w-100">Send Message</button>
-          </form>
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <div class="contact-card h-100">
+            <h3 class="mb-4 text-success">Book Your Event</h3>
+            <form id="contactForm" method="post" class="contact-form">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="username" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required />
+              </div>
+              <div class="mb-3">
+                <label for="phonenumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="Enter Your Phone Number" />
+              </div>
+              <div class="mb-3">
+                <label for="weddingDate" class="form-label">Event Date</label>
+                <input type="date" class="form-control" id="weddingDate" name="weddingDate" />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your event or inquiry..." required></textarea>
+              </div>
+              <button type="submit" class="btn w-100">Send Message</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
+      <!-- Google Map Section (Placeholder) -->
+      {% comment %} <div class="row mt-5">
+        <div class="col-12">
+          <div class="map-container">
+            <!-- You can replace the iframe with your actual location -->
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div> {% endcomment %}
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
 <!-- Toast Notification -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <i class="fas fa-check-circle text-success me-2"></i>
-      <strong class="me-auto">Success</strong>
-      <small>Just Now</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  <div id="liveToast" class="toast align-items-center text-bg-light border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" style="min-width: 300px;">
+    <div class="toast-header bg-success text-white">
+      <i class="fas fa-check-circle me-2 fa-lg"></i>
+      <strong class="me-auto">Message Sent</strong>
+      <span class="badge bg-light text-success rounded-pill ms-2">Success</span>
+      <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
-      Your message has been sent successfully!
+    <div class="toast-body d-flex align-items-center gap-3">
+      <div class="text-success fs-4">
+        <i class="fas fa-paper-plane"></i>
+      </div>
+      <div>
+        <p class="mb-1 fw-semibold">Thanks for reaching out!</p>
+        <small class="text-muted">We'll get back to you shortly.</small>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Bootstrap JS + Font Awesome -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-  // Show the toast if success is passed from the view
-  {% if success %}
-    var toast = new bootstrap.Toast(document.getElementById('liveToast'));
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission for now
+    const toastLive = document.getElementById('liveToast');
+    const toast = new bootstrap.Toast(toastLive);
     toast.show();
-  {% endif %}
+    this.reset(); // Optionally reset form
+  });
 </script>
 
+<style>
+  .toast-header {
+    background: linear-gradient(90deg, #198754, #28a745);
+  }
+</style>
+
+
+
 </body>
+
 <footer class="bg-dark text-white text-center py-3">
   <div class="container">
     {% include 'partials/footer.html' %}
   </div>
 </footer>
+
 </html>

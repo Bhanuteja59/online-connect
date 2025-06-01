@@ -1,96 +1,140 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
-      <!-- Logo/Brand with h1 (use only once per page) -->
-      <a class="navbar-brand" href="/">
-        <h1 class="m-0" style="font-size: 1.5rem; color: #0d6efd;">OnlineConnect</h1>
-      </a>
 
-      <!-- Navbar Toggler Button with Accessibility -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Bootstrap CSS & JS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
 
-      <!-- Navigation Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="/" aria-current="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/designs">Designs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pricing">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/faq">FAQs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
-          </li>
-        </ul>
+
+  <style>
+    .custom-navbar {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .custom-navbar header {
+      background-color:rgb(255, 255, 255);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;   
+      transition: background-color 0.3s ease;
+      height: 80px; /* define exact height */
+    }
+
+    body {
+      padding-top: 80px; /* prevent header overlap */
+    }
+
+    .custom-navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .custom-navbar nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .custom-navbar nav a {
+      position: relative;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .custom-navbar nav a:hover {
+      color: #0d6efd;
+    }
+
+    /* ✨ Hover underline animation */
+    .custom-navbar nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: #0d6efd;
+      transition: width 0.3s ease;
+    }
+
+    .custom-navbar nav a:hover::after {
+      width: 100%;
+    }
+
+    .custom-navbar .menu-toggle {
+      display: none;
+    }
+
+    .custom-navbar .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      padding: 10px;
+    }
+
+    .custom-navbar .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .custom-navbar nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .custom-navbar .menu-toggle:checked + .hamburger + nav {
+        max-height: 400px;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+      }
+
+      .custom-navbar .hamburger {
+        display: flex;
+      }
+
+      .custom-navbar nav a {
+        padding: 0.5rem 0;
+      }
+    }
+  </style>
+<body>
+
+  <section class="custom-navbar">
+    <header class="bg-white shadow-sm">
+      <div class="container d-flex justify-content-between align-items-center h-100 px-4">
+        <a href="/" class="logo text-primary">OnlineConnect</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="rounded">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/designs">Designs</a>
+          <a class="nav-link" href="/services">Services</a>
+          <a class="nav-link" href="/pricing">Pricing</a>
+          <a class="nav-link" href="/faq">FAQs</a>
+          <a class="nav-link" href="/contact">Contact</a>
+        </nav>
       </div>
-    </div>
-  </nav>
-</header>
+    </header>
+  </section>
 
-<style>
-  body {
-    padding-top: 80px;
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030;
-    background-color: white !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-brand h1 {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
-  .navbar-nav .nav-link.active {
-    color: #0d6efd !important;
-    font-weight: bold;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #0a58ca;
-  }
-
-  .btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-  }
-
-  .btn-primary:hover {
-    background-color: #0a58ca;
-    border-color: #0a58ca;
-  }
-</style>
-
-
-    <script src="" async defer></script>
-  </body>
-</html>
+</body>
