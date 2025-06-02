@@ -36,7 +36,6 @@ class Review(models.Model):
         return f"{self.name} - {self.rating}"
     
     
-
 class InvitationDesign(models.Model):
     CATEGORY_CHOICES = [
         ('classic', 'Classic'),
@@ -44,10 +43,10 @@ class InvitationDesign(models.Model):
         ('themed', 'Themed'),
     ]
 
-    title = models.CharField(max_length=200, null=True, blank=True)
-    image_file = models.ImageField(upload_to='invitations/')  # uploaded image
+    title = models.CharField(max_length=200, blank=True)
+    get_image = models.ImageField(upload_to='invitations/', null=True, blank=True)  # uploaded image
     image_url = models.URLField(blank=True, null=True)  # external image link
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -55,6 +54,12 @@ class InvitationDesign(models.Model):
 
     def __str__(self):
         return self.title or "Untitled Design"
+    
+    def get_image_url(self):
+        """Return the URL for the image."""
+        if self.get_image:
+            return self.get_image.url
+        return ''
 
     class Meta:
         ordering = ['created_at']

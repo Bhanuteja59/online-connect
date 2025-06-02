@@ -64,7 +64,7 @@ def services(request):
 
 
 
-def designs(request):
+def designs(request):   
     designs = InvitationDesign.objects.all()
     categories = InvitationDesign.CATEGORY_CHOICES
     return render(request, "designs.html", {'designs': designs, 'categories': categories})
