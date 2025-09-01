@@ -53,4 +53,5 @@ Whether youâ€™re a developer wanting to contribute or a user planning an event â
 
 QR Code Integration: Python libraries for QR generation
 
-Hosting: Compatible with Heroku, Render, or AWS
+Hosting: Render
+
